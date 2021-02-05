@@ -2,6 +2,7 @@
 let addBar = document.getElementById("inputBar");
 let button = document.getElementById("addButton");
 let ul = document.getElementById("ul");
+let li = document.getElementsByTagName("li");
 
 //Event Functions
 /* currently throwing a console error whenever addElement() is run
@@ -41,10 +42,11 @@ function addElementAfterEnter(event) {
 /*function to toggle .done css.
 need to find a way to target a specific li */
 function toggleDone() {
-
+	
 }
 
 setTimeout(deleteTemplate, 10000); // temp solution pending permanent fix
 //Event Listeners
 button.addEventListener("click", addElementAfterClick);
 addBar.addEventListener("keypress", addElementAfterEnter);
+li.addEventListener("click", toggleDone);
