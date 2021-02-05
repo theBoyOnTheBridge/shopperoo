@@ -1,8 +1,7 @@
 //Grabs Elements
 let addBar = document.getElementById("inputBar");
 let button = document.getElementById("addButton");
-let ul = document.getElementById("ul");
-let li = document.getElementsByTagName("li");
+let ul = document.querySelector("ul");
 
 //Event Functions
 /* currently throwing a console error whenever addElement() is run
@@ -39,14 +38,15 @@ function addElementAfterEnter(event) {
 	};
 }
 
-/*function to toggle .done css.
-need to find a way to target a specific li */
-function toggleDone() {
-	
+//function to toggle .done css.
+function toggleDone(event) {
+	if (event.target.tagName === "LI") {
+		event.target.classList.toggle("done");
+	}
 }
 
 setTimeout(deleteTemplate, 10000); // temp solution pending permanent fix
 //Event Listeners
 button.addEventListener("click", addElementAfterClick);
 addBar.addEventListener("keypress", addElementAfterEnter);
-li.addEventListener("click", toggleDone);
+ul.addEventListener("click", toggleDone);
