@@ -21,7 +21,7 @@ function addElement() {
 	li.appendChild(document.createTextNode(addBar.value));
 	ul.appendChild(li);
 	addBar.value = "";
-	// deleteTemplate();
+	// deleteTemplate(); currently on hold pending console error fix
 };
 
 // adds a list item after the click event on the Add! button
@@ -44,7 +44,7 @@ function toggleDone() {
 
 }
 
-setTimeout(deleteTemplate, 10000);
+setTimeout(deleteTemplate, 10000); // temp solution pending permanent fix
 //Event Listeners
 button.addEventListener("click", addElementAfterClick);
 addBar.addEventListener("keypress", addElementAfterEnter);
