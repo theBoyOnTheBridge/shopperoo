@@ -1,4 +1,4 @@
-//Grabs Elements
+//Globals
 let addBar = document.getElementById("inputBar");
 let button = document.getElementById("addButton");
 let ul = document.querySelector("ul");
