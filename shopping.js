@@ -2,6 +2,7 @@
 let addBar = document.getElementById("inputBar");
 let button = document.getElementById("addButton");
 let ul = document.querySelector("ul");
+let list = document.getElementsByTagName("li");
 
 //Event Functions
 /* currently throwing a console error whenever addElement() is run
@@ -44,6 +45,13 @@ function toggleDone(event) {
 		event.target.classList.toggle("done");
 	}
 }
+
+//for loop that adds a delete button to the templates
+for (item in list) {
+	let addBtn = document.createElement("button");
+	addBtn.appendChild(document.createTextNode("X"));
+	list[item].appendChild(addBtn);
+} //issue with deleteTemplate after adding this
 
 setTimeout(deleteTemplate, 10000); // temp solution pending permanent fix
 //Event Listeners
