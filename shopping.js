@@ -3,7 +3,6 @@ let addBar = document.getElementById("inputBar");
 let button = document.getElementById("addButton");
 let ul = document.querySelector("ul");
 let list = document.getElementsByTagName("li");
-// let deleteButton = document.querySelector("")
 
 //Event Functions
 /* currently throwing a console error whenever addElement() is run
@@ -23,6 +22,7 @@ function addElement() {
 	li.appendChild(document.createTextNode(addBar.value));
 	ul.appendChild(li);
 	addBar.value = "";
+	addDeleteBtn(li);
 	// deleteTemplate(); currently on hold pending console error fix
 };
 
@@ -47,24 +47,34 @@ function toggleDone(event) {
 	}
 }
 
+//add delete button function
+function addDeleteBtn(li) {
+	let amendLi = li.appendChild(document.createElement("BUTTON"));
+	amendLi.appendChild(document.createTextNode("X"));
+}
+
 //deleteButton Function
-function deleteBtn() {
+function deleteItem() {
 
 }
 
 //for loop that adds a delete button to the templates
-for (item in list) {
-	let addBtn = document.createElement("button");
-	addBtn.appendChild(document.createTextNode("X"));
-	list[item].appendChild(addBtn);
-} //issue with deleteTemplate after adding this
+// BUG - disrupts addElement() and toggleDone()
+// function loopTemplatesAddDelete () {
+	// for (item in list) {
+	// 	let addBtn = document.createElement("button");
+	// 	addBtn.appendChild(document.createTextNode("X"));
+	// 	list[item].appendChild(addBtn);
+	// }
+// };
 
 setTimeout(deleteTemplate, 10000); // temp solution pending permanent fix
+// loopTemplatesAddDelete(); BUG - disrupts addElement() and toggleDone()
 //Event Listeners
 button.addEventListener("click", addElementAfterClick);
 addBar.addEventListener("keypress", addElementAfterEnter);
 ul.addEventListener("click", toggleDone);
-deleteButton.addEventListener("click", deleteBtn);
+// deleteButton.addEventListener("click", deleteItem);
 
 
 
