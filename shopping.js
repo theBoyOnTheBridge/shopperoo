@@ -3,7 +3,7 @@ let addBar = document.getElementById("inputBar");
 let button = document.getElementById("addButton");
 let ul = document.querySelector("ul");
 let list = document.getElementsByTagName("li");
-let deleteButton = document.getElementsByClassName("deleteButton");
+let deleteButton = document.querySelector("deleteButton");
 
 //Event Functions
 /* currently throwing a console error whenever addElement() is run
@@ -52,7 +52,7 @@ function toggleDone(event) {
 function addDeleteBtn(li) {
 	let amendLi = li.appendChild(document.createElement("BUTTON"));
 	amendLi.appendChild(document.createTextNode("X"));
-	amendLi.setAttribute(class, "deleteButton");
+	amendLi.setAttribute("class", "deleteButton");
 }
 
 //deleteButton Function
