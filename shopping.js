@@ -57,8 +57,9 @@ function addDeleteBtn(li) {
 
 //deleteButton Function
 function deleteItem(event) {
+	console.log("foobar");
 	if (event.target.className === "deleteButton") {
-		event.target.remove();
+		event.target.classList.toggle("deleted");
 	}
 }
 
