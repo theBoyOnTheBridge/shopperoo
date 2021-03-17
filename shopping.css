@@ -1,3 +1,9 @@
+/* line through decoration on element click */
 .done {
 	text-decoration: line-through;
+}
+
+/* on delete button press */
+.deleted {
+	display: none;
 }
