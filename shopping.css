@@ -1,6 +1,7 @@
 /* line through decoration on element click */
 .done {
-	text-decoration: line-through;
+	text-decoration-line: line-through;
+	text-decoration-thickness: 3px;
 }
 
 /* on delete button press */
