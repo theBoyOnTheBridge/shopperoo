@@ -3,7 +3,6 @@ let addBar = document.getElementById("inputBar");
 let button = document.getElementById("addButton");
 let ul = document.querySelector("ul");
 let list = document.getElementsByTagName("li");
-let deleteButton = document.querySelector("deleteButton");
 
 //Event Functions
 /* currently throwing a console error whenever addElement() is run
@@ -52,14 +51,8 @@ function toggleDone(event) {
 function addDeleteBtn(li) {
 	let amendLi = li.appendChild(document.createElement("BUTTON"));
 	amendLi.appendChild(document.createTextNode("X"));
-	amendLi.setAttribute("class", "deleteButton");
-}
-
-//deleteButton Function
-function deleteItem(event) {
-	console.log("foobar");
-	if (event.target.className === "deleteButton") {
-		event.target.classList.toggle("deleted");
+	amendLi.onclick = () => {
+		li.classList.toggle("deleted");
 	}
 }
 
@@ -79,7 +72,7 @@ setTimeout(deleteTemplate, 10000); // temp solution pending permanent fix
 button.addEventListener("click", addElementAfterClick);
 addBar.addEventListener("keypress", addElementAfterEnter);
 ul.addEventListener("click", toggleDone);
-deleteButton.addEventListener("click", deleteItem);
+
 
 
 
